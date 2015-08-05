@@ -1,0 +1,106 @@
+//--------Import fonts
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,400,300,700) 
+
+//--------Import Modules and variables
+@import partials/_base
+
+//--------Import Partials
+@import partials/_reset 
+@import partials/_header
+@import partials/_menus 
+@import partials/_post        
+@import partials/_typography      
+@import partials/_buttons 
+@import partials/_figures  
+@import partials/_grids
+@import partials/_search   
+@import partials/_icons 
+@import partials/_forms
+@import partials/_footer
+@import partials/_modals
+
+.app__view   
+    display: block       
+    position: relative
+    top: -90px
+    margin: 0 auto
+    padding-top: 24px
+    width: 40vw 
+    background-color: $white
+    border-radius: 3px
+    +bxs($level: 1)   
+
+    .text__kick  
+        float: right  
+        position: relative
+        top: -9px  
+        padding-bottom: 5px
+        width: 40px
+
+        font-size: 24px
+        text-align: center
+
+        border: 1px solid transparent
+        border-radius: 3px
+
+        &:hover
+            border: 1px solid rgba(0,0,0,.2)
+
+    .user:hover > .text__kick
+        border: 1px solid rgba(0,0,0,.2)
+
+    .app__meta 
+        display: flex  
+        justify-content: space-between
+        padding: 0px 16px
+        padding-bottom: 15px
+        border-bottom: 1px solid rgba(0,0,0,.1)
+
+        h1    
+            font-size: 32px
+            font-weight: $light
+
+        .add-user
+            $size: 50px
+            display: block
+            position: relative
+            margin: 0
+            padding: 0
+            padding-bottom: 3px
+            width: $size
+
+            font-size: 32px
+            text-align: center
+
+            border: 1px solid $gray
+            border-radius: 3px
+
+            -webkit-transition: all .10s ease
+            -moz-transition: all .10s ease
+            -o-transition: all .10s ease
+            transition: all .10s ease    
+
+            &:hover
+                color: $white
+                background-color: $gray
+
+    .app-players
+        padding: 16px
+    
+    ul 
+        margin: 0
+        padding: 0
+
+    ul li 
+        display: block
+        list-style: none 
+
+    ul li a 
+        display: block
+        margin: 8px 0px
+        padding: 16px
+
+        color: $gray
+        font-size: $base-font-size
+
+        border: 1px solid rgba(0,0,0,.1) 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{! Document Settings }}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+
+    <script type="text/javascript" src="{{asset "js/jquery.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/slib.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/modal.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/theme.js"}}"></script>
+    <script type="text/javascript" src="{{asset "app/app.js"}}"></script>
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}} 
+</head>
+<body class="{{body_class}}">
+
+        <modal class="modal-overlay"></modal>
+        <modal class="modal modal-add">
+            <h1>Add Player</h1>
+            <ul class="players">
+                <li><a href="#" class="player-add">Raver</a></li>
+                <li><a href="#" class="player-add">Rumle</a></li>
+                <li><a href="#" class="player-add">Jonas</a></li>
+                <li><a href="#" class="player-add">Arks</a></li>
+                <li><a href="#" class="player-add">Marco</a></li>
+                <li><a href="#" class="player-add">TreeBear</a></li>
+                <li><a href="#" class="player-add">JC</a></li>
+                <li><a href="#" class="player-add">AG</a></li>
+                <li><a href="#" class="player-add">Caisy</a></li>
+            </ul>
+            <a href="#" class="modal-button modal-button-other">Add Other</a>
+            <a href="#" class="modal-button modal-button-done">Done</a>
+        </modal>
+
+        <modal class="modal modal-delete">
+            <h1>Remove Player</h1>
+            <p>Remove <span></span> from this list?</p>
+            <a href="#" class="modal-button modal-button-remove">Remove</a>
+            <a href="#" class="modal-button modal-button-disagree">Cancel</a>
+        </modal>
+
+        <modal class="modal modal-add-other-player">
+            <h1>Add Other Player</h1>
+            <p>Type the name of the new player</p>
+            <input type="text" />
+            <a href="#" class="modal-button modal-button-add">Add</a>
+            <a href="#" class="modal-button modal-button-cancel">Cancel</a>
+        </modal>
+
+        {{! Everything else gets inserted here }}
+
+        {{{body}}}
+
+    </div>
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+    {{! The main JavaScript file for Casper }}
+    
+
+</body>
+</html>

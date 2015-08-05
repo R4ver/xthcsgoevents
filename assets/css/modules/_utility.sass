@@ -1,0 +1,57 @@
+//-------------Utility---------------
+
+=transition($target, $speed, $easing)
+    -webkit-transition: $target $speed $easing
+    -moz-transition: $target $speed $easing
+    -o-transition: $target $speed $easing
+    transition: $target $speed $easing
+
+=transparent-gradient-tb($red, $green, $blue, $alpha)
+    background: -moz-linear-gradient(top,  rgba($red, $green, $blue, $alpha) 0%, rgba(0,0,0,0) 100%) /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba($red, $green, $blue, $alpha)), color-stop(100%,rgba(0,0,0,0))) /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba($red, $green, $blue, $alpha) 0%,rgba(0,0,0,0) 100%) /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba($red, $green, $blue, $alpha) 0%,rgba(0,0,0,0) 100%) /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba($red, $green, $blue, $alpha) 0%,rgba(0,0,0,0) 100%) /* IE10+ */
+    background: linear-gradient(to bottom,  rgba($red, $green, $blue, $alpha) 0%,rgba(0,0,0,0) 100%) /* W3C */
+
+=transparent-gradient-bt($red, $green, $blue, $alpha)
+    background: -moz-linear-gradient(bottom,  rgba($red, $green, $blue, $alpha) 0%, rgba(0,0,0,0) 100%) /* FF3.6+ */
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(0%,rgba($red, $green, $blue, $alpha)), color-stop(100%,rgba(0,0,0,0))) /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(bottom,  rgba($red, $green, $blue, $alpha) 0%,rgba(0,0,0,0) 100%) /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(bottom,  rgba($red, $green, $blue, $alpha) 0%,rgba(0,0,0,0) 100%) /* Opera 11.10+ */
+    background: -ms-linear-gradient(bottom,  rgba($red, $green, $blue, $alpha) 0%,rgba(0,0,0,0) 100%) /* IE10+ */
+    background: linear-gradient(to top,  rgba($red, $green, $blue, $alpha) 0%,rgba(0,0,0,0) 100%) /* W3C */
+
+=flexbox()
+    display: -webkit-box
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flexbox
+    display: flex 
+
+=breakpoint($point)
+    @if $point == desktop 
+        @media (max-width: 1600px)
+            @content
+    @else if $point == laptop
+        @media (max-width: 1367px) 
+            @content
+    @else if $point == mobile 
+        @media (max-width: 650px)  
+            @content
+
+=bxs($level: 1)
+    @if $level == 1
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+
+    @if $level == 2
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+    
+    @if $level == 3
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+    
+    @if $level == 4
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    
+    @if $level == 5
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22)

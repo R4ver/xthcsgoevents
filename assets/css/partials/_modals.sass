@@ -1,0 +1,128 @@
+.modal-overlay 
+    display: block
+    position: fixed
+    width: 100vw
+    height: 100vh
+    z-index: -500
+    opacity: 0
+    background-color: rgba(0,0,0,.8)
+
+    -webkit-transition: all  .15s ease
+    -moz-transition: all  .15s ease
+    -o-transition: all  .15s ease
+    transition: all  .15s ease
+
+.modal
+    display: block
+    position: fixed
+    top: 50%
+    left: 50%
+    margin: 0
+    padding: 16px 
+    width: 30vw
+    z-index: -900
+    opacity: 0
+
+    background-color: $white
+
+    -webkit-transform: translate(-50%, -50%)
+    -moz-transform: translate(-50%, -50%)
+    -o-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+
+    -webkit-transition: all  .15s ease
+    -moz-transition: all  .15s ease
+    -o-transition: all  .15s ease
+    transition: all  .15s ease 
+
+    +breakpoint(laptop)
+        width: 40vw
+
+    input
+        display: block
+        position: relative
+        padding: 8px
+        width: 100%  
+
+        font-size: 24px
+
+        background: transparent
+        border: 0px
+        border-bottom: 2px solid $main-color 
+        outline: 0
+
+    h1
+        color: $main-color
+        font-size: 32px
+        font-weight: $light
+        padding-bottom: 16px
+
+.modal-delete
+    h1 
+        color: $red
+
+.modal__add-other-player
+    z-index: -999 
+
+.modal-add
+    min-width: 400px !important
+    .players
+        margin: 0
+        padding: 0
+        text-align: center 
+
+        li
+            display: inline-block
+            width: calc(100% / 3 - 16px)
+            list-style: none
+
+        li a
+            display: block
+            margin: 16px
+            padding: 16px 
+
+            text-align: center
+
+            border: 1px solid rgba(0,0,0,.1)
+            +transition(all, .15s, ease)
+
+            &:hover
+                color: $white
+                background-color: $main-color
+                border: 1px solid $main-color
+                +bxs($level: 2)
+
+        .add-other
+            color: $main-color
+
+        &:hover
+            color: $white
+
+.modal-button
+    float: right
+    display: inline-block
+    position: relative
+    margin-top: 15px
+    padding: 8px 16px
+
+.modal-button-done, .modal-button-disagree
+    color: rgba(0,0,0,.7)
+
+.modal-button-remove
+    color: $red
+
+.modal-button-add
+    color: $main-color
+
+.modal-button-disabled
+    color: $button-disabled !important
+    border-color: $button-disabled !important
+    pointer-events: none !important
+    cursor: default
+    color:white
+
+    &:hover
+        color: $button-disabled !important
+        border-color: $button-disabled !important
+        background-color: transparent !important
+        box-shadow: 0px 0px 0px 0px transparent !important
